@@ -93,15 +93,30 @@ h6 {
 /* VARIABLES */
 :root {
   /* colors */
-  --clr-black: hsl(0, 0%, 8%);
-  --clr-green: hsl(153, 71%, 59%);
-  --clr-dark_gray: hsl(0, 0%, 14%);
-  --clr-light_gray: hsl(0, 0%, 85%);
-  --clr-white: hsl(0, 0%, 100%);
+  --clr-neutral-0: hsl(0, 0%, 100%);
+  --clr-neutral-100: hsl(17, 41%, 97%);
+  --clr-neutral-200: hsl(17, 12%, 89%);
+  --clr-neutral-700: hsl(195, 23%, 28%);
+  --clr-neutral-900: hsl(194, 78%, 11%);
+
+  --clr-salmon-50: #fff5ef;
+  --clr-salmon-100: #fff5ef;
+  --clr-salmon-500: #fea36f;
+
+  --clr-gradient: linear-gradient(
+    to right,
+    var(--clr-salmon-500),
+    var(var(--clr-salmon-50))
+  );
+  --clr-gradient: linear-gradient(
+    to right,
+    var(--clr-salmon-500),
+    var(var(--clr-neutral-900))
+  );
 
   /* font family */
-  --ff-headings: "Martian Mono", sans-serif;
-  --ff-body: "Inter", sans-serif;
+  --ff-headings: "Martian Mono", "Courier New", Courier, monospace;
+  --ff-body: "Inter", "Helvetica Neue", Helvetica, Arial, sans-serif;
 
   /* font weights */
   --fw-500: 600;
@@ -112,7 +127,7 @@ h6 {
 
 /* containers */
 .container {
-  --max-width: 70rem;
+  --max-width: 69.375rem;
   --padding: 1rem;
 
   width: min(var(--max-width), 100% - (var(--padding) * 2));
