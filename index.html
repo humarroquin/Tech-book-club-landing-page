@@ -15,36 +15,53 @@
     <title>Frontend Mentor | Tech book club</title>
   </head>
   <body>
-    <header>
-      <img src="/assets/images/logo.svg" alt="" />
+    <header class="header">
+      <div class="header-wrapper container">
+        <img src="/assets/images/logo.svg" alt="" />
+      </div>
     </header>
     <main>
       <!-- hero section -->
       <section class="hero">
-        <div class="hero__content">
-          <h1>Join the ultimate tech book club</h1>
-          <p>
-            Turn your reading time into learning time with fellow tech
-            enthusiasts. Get curated recommendations, join vibrant discussions,
-            and level up your skills one chapter at a time.
-          </p>
-          <button class="btn">Review membership options</button>
-          <div class="reviews-wrapper">
-            <img src="/starter-code/assets/images/image-avatars.webp" alt="" />
-            <div class="ratings">
-              <div class="stars">
-                <img src="/starter-code/assets/images/icon-star.svg" alt="" />
-                <img src="/starter-code/assets/images/icon-star.svg" alt="" />
-                <img src="/starter-code/assets/images/icon-star.svg" alt="" />
-                <img src="/starter-code/assets/images/icon-star.svg" alt="" />
-                <img src="/starter-code/assets/images/icon-star.svg" alt="" />
+        <div class="hero-wrapper container">
+          <div class="hero__content">
+            <h1 class="hero__title header--primary gradient-title">
+              Join the ultimate tech book club
+            </h1>
+            <p class="hero__description">
+              Turn your reading time into learning time with fellow tech
+              enthusiasts. Get curated recommendations, join vibrant
+              discussions, and level up your skills one chapter at a time.
+            </p>
+            <button class="btn btn--hero">
+              Review membership options
+              <img src="/assets/images/icon-arrow-down.svg" alt="" />
+            </button>
+            <div class="reviews-wrapper d-flex">
+              <img
+                class="reviews__avatars"
+                src="/assets/images/image-avatars.webp"
+                alt=""
+              />
+              <div class="ratings d-flex">
+                <div class="stars d-flex">
+                  <img src="/assets/images/icon-star.svg" alt="" />
+                  <img src="/assets/images/icon-star.svg" alt="" />
+                  <img src="/assets/images/icon-star.svg" alt="" />
+                  <img src="/starter-code/assets/images/icon-star.svg" alt="" />
+                  <img src="/assets/images/icon-star.svg" alt="" />
+                </div>
+                <p class="small-bold-txt">200+ developers joined already</p>
               </div>
-              <p>200+ developers joined already</p>
             </div>
           </div>
-        </div>
-        <div class="hero__img">
-          <img src="/assets/images/image-hero-desktop.webp" alt="" />
+          <div class="hero__img-wrapper">
+            <img
+              class="hero__img"
+              src="/assets/images/image-hero-desktop.webp"
+              alt=""
+            />
+          </div>
         </div>
       </section>
       <!-- features -->

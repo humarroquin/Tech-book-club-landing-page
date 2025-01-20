@@ -4,7 +4,8 @@
   font-family: "Martian Mono";
   font-style: normal;
   font-weight: 400;
-  src: url("../fonts/martian-mono-v3-latin-regular.woff2") format("woff2");
+  src: url("/assets/fonts/inter-v18-latin/inter-v18-latin-regular.woff2")
+    format("woff2");
 }
 /* martian-mono-600 - latin */
 @font-face {
@@ -12,7 +13,8 @@
   font-family: "Martian Mono";
   font-style: normal;
   font-weight: 600;
-  src: url("../fonts/martian-mono-v3-latin-600.woff2") format("woff2");
+  src: url("/assets/fonts/inter-v18-latin/inter-v18-latin-600.woff2")
+    format("woff2");
 }
 /* martian-mono-700 - latin */
 @font-face {
@@ -20,7 +22,8 @@
   font-family: "Martian Mono";
   font-style: normal;
   font-weight: 700;
-  src: url("../fonts/martian-mono-v3-latin-700.woff2") format("woff2");
+  src: url("/assets/fonts/inter-v18-latin/inter-v18-latin-700.woff2")
+    format("woff2");
 }
 
 /* inter-regular - latin */
@@ -29,7 +32,7 @@
   font-family: "Inter";
   font-style: normal;
   font-weight: 400;
-  src: url("../fonts/inter-v18-latin-regular.woff2") format("woff2");
+  src: url("/assets/fonts/inter-v18-latin/inter-v18-latin-regular.woff2");
 }
 /* inter-600 - latin */
 @font-face {
@@ -37,7 +40,8 @@
   font-family: "Inter";
   font-style: normal;
   font-weight: 600;
-  src: url("../fonts/inter-v18-latin-600.woff2") format("woff2");
+  src: url("/assets/fonts/inter-v18-latin/inter-v18-latin-600.woff2")
+    format("woff2");
 }
 /* inter-700 - latin */
 @font-face {
@@ -45,7 +49,8 @@
   font-family: "Inter";
   font-style: normal;
   font-weight: 700;
-  src: url("../fonts/inter-v18-latin-700.woff2") format("woff2");
+  src: url("/assets/fonts/inter-v18-latin/inter-v18-latin-700.woff2")
+    format("woff2");
 }
 
 /* CSS RESET — Josh Comeau */
@@ -100,30 +105,76 @@ h6 {
   --clr-neutral-900: hsl(194, 78%, 11%);
 
   --clr-salmon-50: #fff5ef;
-  --clr-salmon-100: #fff5ef;
+  --clr-salmon-100: #ffe2d1;
   --clr-salmon-500: #fea36f;
 
-  --clr-gradient: linear-gradient(
+  --clr-gradient-accent: linear-gradient(
     to right,
-    var(--clr-salmon-500),
-    var(var(--clr-salmon-50))
+    var(--clr-salmon-100),
+    var(--clr-salmon-50)
   );
-  --clr-gradient: linear-gradient(
+  --clr-gradient-titles: linear-gradient(
     to right,
     var(--clr-salmon-500),
-    var(var(--clr-neutral-900))
+    var(--clr-neutral-900)
   );
 
   /* font family */
-  --ff-headings: "Martian Mono", "Courier New", Courier, monospace;
+  --ff-headings: "Martian Mono";
   --ff-body: "Inter", "Helvetica Neue", Helvetica, Arial, sans-serif;
 
   /* font weights */
-  --fw-500: 600;
+  --fw-400: 400;
+  --fw-600: 600;
   --fw-700: 700;
 }
 
 /* REUSABLE STYLES */
+.header--primary {
+  font-family: var(--ff-headings);
+  font-weight: var(--fw-700);
+  font-size: 3.875rem;
+  line-height: 1.2;
+  letter-spacing: -2px;
+}
+
+.small-bold-txt {
+  font-family: var(--ff-headings);
+  font-weight: var(--fw-400);
+  font-size: 14px;
+  line-height: 1.2;
+  letter-spacing: -1px;
+  color: var(--clr-neutral-700);
+}
+
+.btn {
+  border: 2px solid var(--clr-neutral-900);
+  padding: 20px;
+  border-radius: 8px;
+  background: var(--clr-salmon-50);
+  font-family: var(--ff-headings);
+  text-transform: uppercase;
+  font-size: 18px;
+  line-height: 1.3;
+  letter-spacing: -1px;
+  font-weight: var(--fw-600);
+  cursor: pointer;
+  transition: background 3s ease-in-out;
+}
+
+.btn:hover {
+  background: var(--clr-gradient-accent);
+}
+
+.gradient-title {
+  background: var(--clr-gradient-titles);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.d-flex {
+  display: flex;
+}
 
 /* containers */
 .container {
@@ -136,6 +187,77 @@ h6 {
 
 /* PAGE STYLES */
 body {
+  font-family: var(--ff-body);
   line-height: 1.5;
+  font-size: 20px;
   -webkit-font-smoothing: antialiased;
+}
+
+.header {
+  position: absolute;
+  top: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  z-index: 2;
+}
+
+.hero {
+  position: relative;
+  padding-block: 9.25rem 80px;
+  background-color: var(--clr-salmon-50);
+  background-image: url(/assets/images/pattern-light-bg.svg);
+  z-index: 1;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  background-image: url(/assets/images/pattern-glow.svg);
+  background-repeat: no-repeat;
+  height: 40rem;
+  width: 30rem;
+  bottom: 0;
+  right: 0;
+  z-index: -1;
+}
+
+.hero-wrapper {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 64px;
+}
+
+.hero__title {
+  max-width: 25rem;
+}
+
+.hero__description {
+  margin-block: 24px 32px;
+}
+
+.btn--hero {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.reviews-wrapper {
+  margin-top: 20px;
+  gap: 12px;
+}
+
+.reviews__avatars {
+  max-width: 110px;
+  max-height: 40px;
+}
+
+.ratings {
+  flex-direction: column;
+}
+
+.hero__img {
+  max-width: 540px;
+  max-height: 606px;
+  border-radius: 8px;
 }
