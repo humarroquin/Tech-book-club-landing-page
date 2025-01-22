@@ -104,9 +104,9 @@ h6 {
   --clr-neutral-700: hsl(195, 23%, 28%);
   --clr-neutral-900: hsl(194, 78%, 11%);
 
-  --clr-salmon-50: #fff5ef;
-  --clr-salmon-100: #ffe2d1;
-  --clr-salmon-500: #fea36f;
+  --clr-salmon-50: hsl(23, 100%, 97%);
+  --clr-salmon-100: hsl(22, 100%, 91%);
+  --clr-salmon-500: hsl(22, 99%, 72%);
 
   --clr-gradient-accent: linear-gradient(
     to right,
@@ -136,6 +136,15 @@ h6 {
   font-size: 3.875rem;
   line-height: 1.2;
   letter-spacing: -2px;
+}
+
+.header--secondary {
+  font-family: var(--ff-headings);
+  font-weight: var(--fw-700);
+  font-size: 50px;
+  line-height: 1.3;
+  letter-spacing: -2px;
+  color: var(--clr-neutral-900);
 }
 
 .small-bold-txt {
@@ -176,6 +185,16 @@ h6 {
   display: flex;
 }
 
+.grid-2cols {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 64px;
+}
+
+.section-img {
+  border-radius: 20px;
+}
+
 /* containers */
 .container {
   --max-width: 69.375rem;
@@ -191,8 +210,10 @@ body {
   line-height: 1.5;
   font-size: 20px;
   -webkit-font-smoothing: antialiased;
+  color: var(--clr-neutral-700);
 }
 
+/* header */
 .header {
   position: absolute;
   top: 2rem;
@@ -202,6 +223,7 @@ body {
   z-index: 2;
 }
 
+/* hero */
 .hero {
   position: relative;
   padding-block: 9.25rem 80px;
@@ -220,12 +242,6 @@ body {
   bottom: 0;
   right: 0;
   z-index: -1;
-}
-
-.hero-wrapper {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 64px;
 }
 
 .hero__title {
@@ -257,7 +273,39 @@ body {
 }
 
 .hero__img {
-  max-width: 540px;
-  max-height: 606px;
   border-radius: 8px;
+}
+
+/* features */
+.features {
+  background-color: var(--clr-neutral-0);
+  padding-block: 120px;
+}
+
+.features__wrapper {
+  align-items: center;
+}
+
+.features__header {
+  max-width: 25rem;
+  margin-bottom: 34px;
+}
+
+.features__content ul {
+  padding: 0;
+  list-style: none;
+}
+
+.features__content ul li {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.features__content ul li:not(:last-child) {
+  margin-bottom: 1rem;
+}
+
+.features__content ul li::before {
+  content: url(/assets/images/icon-check.svg);
 }
