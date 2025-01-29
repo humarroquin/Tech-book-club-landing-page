@@ -320,6 +320,7 @@ body {
   margin-bottom: 1rem;
 }
 
+/* Todo: Check this again. Check icon is not centered */
 .features__content ul li::before {
   content: url(/assets/images/icon-check.svg);
 }
@@ -400,4 +401,110 @@ body {
 
   display: grid;
   place-content: center;
+}
+
+/* pricing */
+.pricing {
+  padding-bottom: 120px;
+}
+
+.pricing__title {
+  max-width: 100%;
+  text-align: center;
+  margin-bottom: 64px;
+}
+
+.pricing__wrapper {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  align-items: center;
+}
+
+/* Todo: check the height on the pricing cards. The middle card needs to be bigger */
+.pricing__card {
+  border: 1px solid var(--clr-neutral-200);
+  border-radius: 8px;
+  padding: 24px;
+  display: grid;
+  gap: 24px;
+}
+
+.pricing__plan {
+  font-family: var(--ff-headings);
+  font-weight: var(--fw-600);
+  color: var(--clr-neutral-900);
+  font-size: 24px;
+}
+
+.pricing__card--highlighted {
+  background-color: var(--clr-salmon-50);
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.pricing__card--highlighted::after {
+  content: "";
+  position: absolute;
+  background-image: url(/assets/images/pattern-glow.svg);
+  background-repeat: no-repeat;
+  height: 30rem;
+  width: 30rem;
+  bottom: 0;
+  right: 0;
+  z-index: -1;
+}
+
+.pricing__divider {
+  height: 1px;
+  background-color: var(--clr-neutral-200);
+  width: 100%;
+}
+
+.pricing__quantity {
+  font-family: var(--ff-headings);
+  font-weight: var(--fw-600);
+  font-size: 34px;
+  color: var(--clr-neutral-900);
+}
+
+.pricing ul {
+  padding: 0;
+  list-style: none;
+}
+
+.pricing ul li {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.pricing ul li:not(:last-child) {
+  margin-bottom: 1rem;
+}
+
+/* Todo: this again. Check icon is not centered */
+.pricing ul li::before {
+  content: url(/assets/images/icon-check.svg);
+  display: inline-block;
+}
+
+.pricing__price-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.pricing__btn {
+  background-color: var(--clr-salmon-50);
+  font-family: var(--ff-headings);
+  font-weight: var(--fw-600);
+  font-size: 18px;
+  text-transform: uppercase;
+  border: 2px solid var(--clr-neutral-900);
+  padding: 20px 43px;
+  cursor: pointer;
+  border-radius: 8px;
+  color: var(--clr-neutral-900);
 }
