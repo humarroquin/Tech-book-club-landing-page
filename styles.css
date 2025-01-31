@@ -198,6 +198,12 @@ h6 {
   gap: 64px;
 }
 
+@media screen and (max-width: 768px) {
+  .grid-2cols {
+    grid-template-columns: 1fr;
+  }
+}
+
 .section-img {
   border-radius: 20px;
 }
@@ -319,6 +325,12 @@ body {
   padding-block: 120px;
 }
 
+@media screen and (max-width: 768px) {
+  .features__content {
+    grid-row: 1 / 2;
+  }
+}
+
 .features__wrapper {
   align-items: center;
 }
@@ -368,6 +380,12 @@ body {
   border-radius: 12px;
   position: relative;
   z-index: 1;
+}
+
+@media screen and (max-width: 768px) {
+  .journey {
+    display: none;
+  }
 }
 
 .journey::after {
@@ -437,6 +455,24 @@ body {
   grid-template-columns: repeat(3, 1fr);
   gap: 24px;
   align-items: center;
+}
+
+@media screen and (max-width: 768px) {
+  .pricing {
+    padding-top: 120px;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .pricing__wrapper {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (max-width: 580px) {
+  .pricing__wrapper {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* Todo: check the height on the pricing cards. The middle card needs to be bigger */
@@ -597,4 +633,5 @@ body {
 
 .icons-wrapper {
   gap: 24px;
+  align-items: center;
 }
