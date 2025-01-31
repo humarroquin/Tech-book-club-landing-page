@@ -278,6 +278,8 @@ body {
   padding-block: 9.25rem 80px;
   background-color: var(--clr-salmon-50);
   background-image: url(/assets/images/pattern-light-bg.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
   z-index: 1;
 }
 
@@ -553,6 +555,9 @@ body {
 
 /* cta */
 .cta {
+  background-image: url(/assets/images/pattern-dark-bg.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
   background-color: var(--clr-neutral-900);
   color: var(--clr-neutral-0);
   border-radius: 16px 16px 0 0;
@@ -574,4 +579,22 @@ body {
 
 .rating__text--cta {
   color: var(--clr-neutral-0);
+}
+
+/* footer */
+.footer {
+  background-image: url(/assets/images/pattern-dark-bg.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: var(--clr-neutral-900);
+  padding-block: 24px 29px;
+  color: var(--clr-neutral-0);
+}
+
+.footer-wrapper {
+  justify-content: space-between;
+}
+
+.icons-wrapper {
+  gap: 24px;
 }
