@@ -133,7 +133,7 @@ h6 {
 /* headings and text */
 .header--primary,
 .header--secondary {
-  word-spacing: 15px;
+  word-spacing: 0.9375rem;
 }
 
 .header--primary {
@@ -187,10 +187,10 @@ h6 {
   background-image: url(/assets/images/pattern-circle.png);
   background-repeat: no-repeat;
   position: absolute;
-  width: 160px;
-  height: 66px;
+  width: 10rem;
+  height: 4.125rem;
   top: 0;
-  left: -20px;
+  left: -1.25rem;
   z-index: 1;
 }
 
@@ -204,7 +204,7 @@ h6 {
   border: 2px solid var(--clr-neutral-900);
   padding: 1.25rem;
   border-radius: 8px;
-  background: var(--clr-salmon-50);
+  background-color: var(--clr-salmon-50);
   text-transform: uppercase;
   cursor: pointer;
   transition: background 3s ease-in-out;
@@ -221,7 +221,7 @@ h6 {
 
 .btn--white {
   background-color: transparent;
-  border: 2px solid var(--clr-neutral-0);
+  border-color: var(--clr-neutral-0);
   color: var(--clr-neutral-0);
   display: flex;
   gap: 1rem;
@@ -239,7 +239,7 @@ h6 {
 .grid-2cols {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 64px;
+  gap: 4rem;
 }
 
 @media screen and (max-width: 768px) {
@@ -262,9 +262,17 @@ h6 {
   margin-inline: auto;
 }
 
-/* section */
+/* sections */
 .section--white {
   background-color: var(--clr-neutral-0);
+}
+
+main section:nth-child(even) {
+  padding-block: 7.5rem;
+}
+
+main section:nth-child(odd) {
+  padding-bottom: 7.5rem;
 }
 
 /* COMPONENTS */
@@ -306,8 +314,6 @@ h6 {
 .list__content ul li {
   display: flex;
   gap: 1.5rem;
-
-  outline: 2px solid lime;
 }
 
 .list__content ul li:not(:last-child) {
@@ -352,7 +358,7 @@ body {
 }
 
 .hero__title {
-  max-width: 11ch;
+  max-width: calc(12ch - 0.9375rem);
 }
 
 .hero__description {
@@ -377,11 +383,7 @@ body {
 }
 
 /* features */
-.features {
-  padding-block: 7.5rem;
-}
-
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 48rem) {
   .features__content {
     grid-row: 1 / 2;
   }
@@ -391,7 +393,17 @@ body {
   align-items: center;
 }
 
+.features__title {
+  margin-bottom: 2.125rem;
+  max-width: calc(13ch - 0.9375rem);
+}
+
 /* why */
+.why__title {
+  max-width: calc(14ch - 0.9375rem);
+  margin-bottom: 1.5rem;
+}
+
 .why__img-wrapper {
   position: relative;
 }
@@ -400,11 +412,30 @@ body {
   content: "";
   background-image: url(/assets/images/logos-tech.svg);
   background-repeat: no-repeat;
+  background-size: contain;
   position: absolute;
-  width: 120px;
-  height: 138px;
+  width: 7.5rem;
+  height: 8.625rem;
   bottom: 0;
-  left: -80px;
+  left: -5rem;
+}
+
+@media screen and (max-width: 48rem) {
+  .why__img-wrapper::after {
+    bottom: 3rem;
+    left: initial;
+    right: 3rem;
+
+    /* fluid sizing as image gets smaller */
+    height: clamp(6.25rem, 3.9838rem + 9.6692vw, 8.625rem);
+    width: clamp(5.125rem, 2.8588rem + 9.6692vw, 7.5rem);
+  }
+}
+
+@media screen and (max-width: 23.4375rem) {
+  .why__img-wrapper::after {
+    display: none;
+  }
 }
 
 /* features */
