@@ -208,6 +208,11 @@ h6 {
   text-transform: uppercase;
   cursor: pointer;
   transition: background 3s ease-in-out;
+
+  /* arrow icon */
+  display: flex;
+  align-items: center;
+  gap: 1rem;
 }
 
 .btn:hover {
@@ -290,8 +295,8 @@ h6 {
 /* PAGE STYLES */
 body {
   font-family: var(--ff-body);
+  font-size: 1.25rem;
   line-height: 1.5;
-  font-size: 20px;
   -webkit-font-smoothing: antialiased;
   color: var(--clr-neutral-700);
 }
@@ -308,15 +313,28 @@ body {
 
 /* hero */
 .hero {
-  position: relative;
-  padding-block: 9.25rem 80px;
-  background-color: var(--clr-salmon-50);
   background-image: url(/assets/images/pattern-light-bg.svg);
   background-repeat: no-repeat;
   background-size: cover;
+  background-color: var(--clr-salmon-50);
+  padding-block: 9.25rem 5rem;
+  position: relative;
   z-index: 1;
 }
 
+.hero__title {
+  max-width: 11ch;
+}
+
+.hero__description {
+  margin-block: 1.5rem 2rem;
+}
+
+.hero__img {
+  border-radius: 8px;
+}
+
+/* blue glow */
 .hero::after {
   content: "";
   position: absolute;
@@ -327,24 +345,6 @@ body {
   bottom: 0;
   right: 0;
   z-index: -1;
-}
-
-.hero__title {
-  max-width: 11ch;
-}
-
-.hero__description {
-  margin-block: 24px 32px;
-}
-
-.btn--hero {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-}
-
-.hero__img {
-  border-radius: 8px;
 }
 
 /* features */
