@@ -186,12 +186,15 @@ h6 {
   content: "";
   background-image: url(/assets/images/pattern-circle.png);
   background-repeat: no-repeat;
+  background-size: contain;
   position: absolute;
-  width: 10rem;
-  height: 4.125rem;
   top: 0;
   left: -1.25rem;
   z-index: 1;
+
+  /* fluidly scales the image down */
+  width: clamp(8.75rem, 7.5573rem + 5.0891vw, 10rem);
+  height: clamp(2.875rem, 1.6823rem + 5.0891vw, 4.125rem);
 }
 
 /* buttons */
@@ -243,7 +246,7 @@ h6 {
   gap: 4rem;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 48rem) {
   .grid-2cols {
     grid-template-columns: 1fr;
   }
@@ -522,29 +525,10 @@ body {
 .pricing__grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
   align-items: center;
+  gap: 2rem;
 }
 
-@media screen and (max-width: 48rem) {
-  .pricing-section {
-    padding-top: 7.5rem;
-  }
-}
-
-@media screen and (max-width: 56.25rem) {
-  .pricing__grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media screen and (max-width: 36.25rem) {
-  .pricing__grid {
-    grid-template-columns: 1fr;
-  }
-}
-
-/* Todo: check the height on the pricing cards. The middle card needs to be bigger */
 .pricing__card {
   border: 1px solid var(--clr-neutral-200);
   border-radius: 8px;
@@ -558,6 +542,8 @@ body {
   position: relative;
   z-index: 1;
   overflow: hidden;
+  transform: scale(1.1);
+  transform-origin: center;
 }
 
 .pricing__card--highlighted::after {
@@ -570,6 +556,30 @@ body {
   bottom: 0;
   right: 0;
   z-index: -1;
+}
+
+@media screen and (max-width: 56.25rem) {
+  .pricing__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .pricing__card--highlighted {
+    transform: scale(1);
+  }
+  .pricing__grid {
+    gap: 1.5rem;
+  }
+}
+
+@media screen and (max-width: 48rem) {
+  .pricing-section {
+    padding-top: 7.5rem;
+  }
+}
+
+@media screen and (max-width: 36.25rem) {
+  .pricing__grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 .pricing__plan {
