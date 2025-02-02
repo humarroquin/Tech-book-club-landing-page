@@ -262,9 +262,14 @@ h6 {
   margin-inline: auto;
 }
 
+/* section */
+.section--white {
+  background-color: var(--clr-neutral-0);
+}
+
 /* COMPONENTS */
 
-/* rating component */
+/* ratings component */
 .reviews-wrapper {
   margin-top: 1.25rem;
   gap: 0.75rem;
@@ -290,6 +295,30 @@ h6 {
 
 .ratings-text--white {
   color: var(--clr-neutral-0);
+}
+
+/* lists with checkbox image */
+.list__content ul {
+  padding: 0;
+  list-style: none;
+}
+
+.list__content ul li {
+  display: flex;
+  gap: 1.5rem;
+
+  outline: 2px solid lime;
+}
+
+.list__content ul li:not(:last-child) {
+  margin-bottom: 1rem;
+}
+
+.list__content ul li::before {
+  content: url(/assets/images/icon-check.svg);
+  align-self: center;
+  height: 1.75rem;
+  width: 1.75rem;
 }
 
 /* PAGE STYLES */
@@ -349,8 +378,7 @@ body {
 
 /* features */
 .features {
-  background-color: var(--clr-neutral-0);
-  padding-block: 120px;
+  padding-block: 7.5rem;
 }
 
 @media screen and (max-width: 768px) {
@@ -361,26 +389,6 @@ body {
 
 .features__wrapper {
   align-items: center;
-}
-
-.features__content ul {
-  padding: 0;
-  list-style: none;
-}
-
-.features__content ul li {
-  display: flex;
-  align-items: center;
-  gap: 24px;
-}
-
-.features__content ul li:not(:last-child) {
-  margin-bottom: 1rem;
-}
-
-/* Todo: Check this again. Check icon is not centered */
-.features__content ul li::before {
-  content: url(/assets/images/icon-check.svg);
 }
 
 /* why */
@@ -400,7 +408,7 @@ body {
 }
 
 /* features */
-.journey {
+.journey__wrapper {
   background-image: url(/assets/images/pattern-light-bg.svg);
   background-color: var(--clr-salmon-50);
   margin-block: 120px;
@@ -408,15 +416,16 @@ body {
   border-radius: 12px;
   position: relative;
   z-index: 1;
+  overflow: hidden;
 }
 
 @media screen and (max-width: 768px) {
-  .journey {
+  .journey__wrapper {
     display: none;
   }
 }
 
-.journey::after {
+.journey__wrapper::after {
   content: "";
   position: absolute;
   background-image: url(/assets/images/pattern-glow.svg);
@@ -551,33 +560,13 @@ body {
   color: var(--clr-neutral-900);
 }
 
-.pricing ul {
-  padding: 0;
-  list-style: none;
-}
-
-.pricing ul li {
-  display: flex;
-  align-items: center;
-  gap: 24px;
-}
-
-.pricing ul li:not(:last-child) {
-  margin-bottom: 1rem;
-}
-
-/* Todo: this again. Check icon is not centered */
-.pricing ul li::before {
-  content: url(/assets/images/icon-check.svg);
-  display: inline-block;
-}
-
 .pricing__price-wrapper {
   display: flex;
   align-items: center;
   gap: 8px;
 }
 
+/* todo: check this button again */
 .pricing__btn {
   background-color: var(--clr-salmon-50);
   font-family: var(--ff-headings);
