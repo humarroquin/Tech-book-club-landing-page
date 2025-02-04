@@ -48,7 +48,6 @@ In this specific challenge, I learned how to add a gradient to text, as I had no
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
-}
 ```
 
 ### Continued development
