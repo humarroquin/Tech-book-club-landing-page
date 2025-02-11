@@ -185,7 +185,7 @@ h6 {
 
 .circled-text-decoration::after {
   content: "";
-  background-image: url(../assets/images/pattern-circle.png);
+  background-image: url(./assets/images/pattern-circle.png);
   background-repeat: no-repeat;
   background-size: contain;
   position: absolute;
